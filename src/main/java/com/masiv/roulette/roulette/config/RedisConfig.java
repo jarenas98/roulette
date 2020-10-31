@@ -3,6 +3,7 @@ package com.masiv.roulette.roulette.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -13,29 +14,18 @@ import org.springframework.stereotype.Component;
 
 @Configuration
 @EnableRedisRepositories
-@Component
 public class RedisConfig {
-	@Bean
-	public JedisConnectionFactory connectionFactory() {
-		RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
-		configuration.setHostName("localhost");
-		configuration.setPort(6379);
+	  @Bean
+	  public RedisConnectionFactory connectionFactory() {
+	    return new JedisConnectionFactory();
+	  }
 
-		return new JedisConnectionFactory(configuration);
-	}
-
-	@Bean
-	@Primary
-	public RedisTemplate<?, ?> redisTemplate() {
-		RedisTemplate<byte[], byte[]> template = new RedisTemplate<>();
-		template.setConnectionFactory(connectionFactory());
-		template.setKeySerializer(new StringRedisSerializer());
-		template.setHashKeySerializer(new StringRedisSerializer());
-		template.setHashKeySerializer(new JdkSerializationRedisSerializer());
-		template.setValueSerializer(new JdkSerializationRedisSerializer());
-		template.setEnableTransactionSupport(true);
-		template.afterPropertiesSet();
-
-		return template;
-	}
+	  @Bean
+	  @Primary
+	  public RedisTemplate<?, ?> redisTemplate() {
+	    RedisTemplate<byte[], byte[]> template = new RedisTemplate<byte[], byte[]>();
+	    template.setConnectionFactory(connectionFactory());
+	    
+	    return template;
+	  }
 }
