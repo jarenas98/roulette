@@ -1,11 +1,6 @@
 package com.masiv.roulette.roulette.entity;
 
-import java.io.Serializable;
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
-
+import org.springframework.data.redis.core.index.Indexed;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,13 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("Bet")
-public class Bet implements Serializable{
-	@Id
+public class Bet {
+	@Indexed
 	private Long identifier;
 	private Short betNumber;
-	private Short betColor;
-	private Integer betAmount;
-	private Long userIdentifier;
-	
+	private String betColor;
+	private Double betAmount;
+	private String userIdentifier;
+	private Long rouletteId;
 }
