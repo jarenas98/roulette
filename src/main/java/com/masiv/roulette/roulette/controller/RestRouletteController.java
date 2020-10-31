@@ -12,14 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.masiv.roulette.roulette.dto.BetDTO;
 import com.masiv.roulette.roulette.dto.GenericResponseDTO;
 import com.masiv.roulette.roulette.dto.ResultRouletteDTO;
+import com.masiv.roulette.roulette.dto.RouletteDTO;
 import com.masiv.roulette.roulette.entity.Roulette;
 import com.masiv.roulette.roulette.service.RestRouletteService;
 import com.masiv.roulette.roulette.utilities.ROULETTEconstants;
 import com.masiv.roulette.roulette.utilities.ROULETTEvalidator;
 /**
+ * allows to contain endpoints
  * 
  * @author Jefferson Arenas Castaño
- *
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/roulette")

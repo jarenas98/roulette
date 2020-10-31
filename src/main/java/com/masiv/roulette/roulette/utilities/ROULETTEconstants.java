@@ -1,5 +1,11 @@
 package com.masiv.roulette.roulette.utilities;
-
+/**
+ * This class contains the constants of the system
+ * 
+ * @author Jefferson Arenas Castaño
+ * @version 1.0
+ *
+ */
 public class ROULETTEconstants {
 	public static final String HASH_KEY_BET = "Bet";
 	public static final String HASH_KEY_ROULETTE = "Roulette";

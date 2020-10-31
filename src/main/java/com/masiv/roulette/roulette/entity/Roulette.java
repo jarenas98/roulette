@@ -5,7 +5,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
+/**
+ * Entity Model for a Roulette
+ * 
+ * @author Jefferson Arenas Castaño
+ * @version 1.0
+ *
+ */
 @Data
 @AllArgsConstructor
 @RedisHash("Roulette")

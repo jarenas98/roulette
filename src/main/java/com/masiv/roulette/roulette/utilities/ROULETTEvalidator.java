@@ -1,7 +1,13 @@
 package com.masiv.roulette.roulette.utilities;
 
 import com.masiv.roulette.roulette.dto.BetDTO;
-
+/**
+ * This class contains the validator transactional of the system
+ * 
+ * @author Jefferson Arenas Castaño
+ * @version 1.0
+ *
+ */
 public class ROULETTEvalidator {
 	public ROULETTEvalidator() {
 		super();

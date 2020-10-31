@@ -17,7 +17,13 @@ import com.masiv.roulette.roulette.entity.Bet;
 import com.masiv.roulette.roulette.entity.Roulette;
 import com.masiv.roulette.roulette.repository.RouletteRepository;
 import com.masiv.roulette.roulette.utilities.ROULETTEconstants;
-
+/**
+ * This class contains the business operations
+ * 
+ * @author Jefferson Arenas Castaño
+ * @version 1.0
+ *
+ */
 @Service
 public class RestRouletteService {
 	@Autowired
